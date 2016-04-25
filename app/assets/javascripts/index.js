@@ -103,7 +103,7 @@ $("#flow").click(function(){
 		$('.fill_text').fadeOut();
 		$('#flow').attr('value',"Keep spittin'");
 		$("#noun1").fadeIn();
-	},2000)
+	},2500)
 })
 
 		$("#flow").click(function(event){

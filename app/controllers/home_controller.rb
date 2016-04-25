@@ -152,7 +152,7 @@ def index
 	@song_title = @song_list[RandomInteger(@song_list)]
 
 
-	@template_idx = rand(0..3)
+	@template_idx = rand(0..4)
 
 	if @template_idx == 0
 		@form_path = americkaz_most_prep_path
@@ -254,7 +254,7 @@ def gangsta_party_prep
 
 	@adjrhymes = getRhymes(@adj)
 
-	@propNoun =  @propNoun.upcase.scan(/.{1}/).join("-").insert(-2,"double-").gsub('- -'," ").gsub('-.-',". ").gsub('-. ',". ")
+	@propNoun =  @propNoun.upcase.scan(/.{1}/).join("-").insert(-2,"double-").gsub('- -'," ").gsub('-.-',". ").gsub('-. ',". ").gsub('---','-')
 
 	@noun2_adjs = getAdj(@noun2rhymes.join(','))
 	@noun2_adj1 = @noun2_adjs[RandomInteger(@noun2_adjs)]
@@ -378,7 +378,7 @@ def juicy_prep
 	@adj_noun1 = @adj_nouns[RandomInteger(@adj_nouns)]
 	@adj_noun2 = @adj_nouns[RandomInteger(@adj_nouns)]
 
-	redirect_to controller: 'home', action: 'juicy', noun1: @noun1, noun2: @noun2, verb1: @verb1, verb2: @verb2, adj: @adj, propNoun: @propNoun, noun1_noun1: @noun1_noun1, noun1_noun2: @noun_noun2, noun2_noun1: @noun2_noun1, noun2_noun2: @noun2_noun2, verb1_verb1: @verb1_verb1, verb1_noun1: @verb1_noun1, verb2_noun1: @verb2_noun1, adj_noun1: @adj_noun1, adj_noun2: @adj_noun2
+	redirect_to controller: 'home', action: 'juicy', noun1: @noun1, noun2: @noun2, verb1: @verb1, verb2: @verb2, adj: @adj, propNoun: @propNoun, noun1_noun1: @noun1_noun1, noun1_noun2: @noun1_noun2, noun2_noun1: @noun2_noun1, noun2_noun2: @noun2_noun2, verb1_verb1: @verb1_verb1, verb1_noun1: @verb1_noun1, verb2_noun1: @verb2_noun1, adj_noun1: @adj_noun1, adj_noun2: @adj_noun2
 
 
 end
