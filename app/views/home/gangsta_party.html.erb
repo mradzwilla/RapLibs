@@ -1,0 +1,34 @@
+<div class="raplibs" id="final_position">
+	<div class="rap" id="rap_final">RAP
+		<span class="libs" id="libs_final">LIBS
+		</span>
+	</div>
+</div>
+
+<div id="full_result">
+<p>
+Picture perfect, I paint a perfect <%= @noun1 %>. <br>
+Bomb the suckaz with precision my intention's to get richer<br>
+With the <%= @propNoun %>, my f***** homey<br>
+It's <%= @adj %> we <%= @adj_verb1%> our <%= @adj_noun1 %><br></p>
+
+<p>
+Sho nuff, I keep my hand on my <%= @verb1_noun1%> cuz they got me on the <%= @verb1 %><br>
+Now I'm back in the courtroom waitin on the <%= @verb1_noun2 %><br>
+<%= @verb2.capitalize %> Tupac, it seems to be on my mind<br>
+But at the same time it seem they tryin to take mine<br>
+So I'ma get <%= @noun2_adj1 %>, and get defensive and s***<br>
+And put together a <%= @noun2 %>, for some gangsta s***<br></p>
+</div>
+
+<footer>
+	<ul>
+		<li>
+			<div class="fb-share-button" data-href=<%= @sharable_link %> data-layout="button" data-mobile-iframe="true"></div>
+		</li>
+		<li> <%= link_to "Workshop this", controller: "home", action: "gangsta_party_prep", noun1: @noun1, noun2: @noun2, verb1: @verb1, verb2: @verb2, adj: @adj, propNoun: @propNoun %>
+		</li>
+		<li>
+			<%= link_to "Next Round", root_path, method: "get" %>
+		</li>
+</footer>

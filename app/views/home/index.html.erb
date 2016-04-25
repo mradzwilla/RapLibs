@@ -1,0 +1,59 @@
+<div class="raplibs">
+	<div class="rap" id="rap_animate">RAP
+		<span class="libs" id="libs_animate">LIBS
+		</span>
+	</div>
+</a>
+</div>
+
+
+<div class="text_line">
+
+
+	<div class='input_container'>
+			<span class='fill_text'>
+			</span>
+		<div class="input_section">
+
+		<%= form_tag(@form_path, method: "get") do %>
+
+ 			<%= text_field_tag 'noun1', nil,placeholder:"Enter a noun"  %>
+		<br>
+			<%= text_field_tag 'verb1', nil,placeholder: "Enter a verb" %>
+			<br>
+			<%= text_field_tag 'noun2', nil,placeholder: "One more noun" %>
+			<br>
+			<%= text_field_tag 'verb2', nil,placeholder: "One more verb" %>
+			<br>
+			<%= text_field_tag 'adj', nil,placeholder: "An adjective" %>
+			<br>
+
+			<%= text_field_tag 'propNoun', nil,placeholder: "And one proper noun" %>
+			</div>
+			<br>
+		
+	</div>
+
+
+<div class="flowButton">
+	<%= submit_tag "Start", id: "flow" %>
+ 	<% end %>
+</div>
+</div>
+
+<div id="about">
+	<p id="about_top_line">Yo, welcome to RapLibs, home of the sickest freestyle with arbitrary words! <br> Just enter a few words when the beat drops and RapLibs will spit back lyrical fire!</p>
+	<p>RapLibs is powered by <a href="http://www.rhymebrain.com">RhymeBrain</a>.
+	<p>All background beats provided free of charge by <a href="http://musicbeats.net/free-background-music-for-videos/">Efreezee</a>.
+	</p>
+	<p id="about_back">Alright, let's get started!</p>
+</div>
+<footer id="intro_footer">
+	<li>
+		<%= link_to "Home", root_path, id: "home", method: "get" %>
+		<!-- Removing method: "get" will cause program to not reload JS on redirect -->
+	</li>
+	<li>
+		<a href=# id="about_link"> About</a>
+	</li>
+</footer>

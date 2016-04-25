@@ -1,0 +1,58 @@
+
+<div class="raplibs" id="final_position">
+	<div class="rap" id="rap_final">RAP
+		<span class="libs" id="libs_final">LIBS
+		</span>
+	</div>
+</div>
+
+<div id="full_result">
+<p class="result">It's all good, baby baby!</p>
+
+<p class="result">
+It was all a <%= @noun1 %>
+<br>
+I used to read Word Up <%= @noun1_noun1.capitalize %><br>
+Salt 'n' Pepa and Heavy D up in the <%= @noun1_noun2 %>
+<br>
+Hangin pictures on my wall
+<br>
+Every Saturday Rap Attack, <%= @propNoun %>, Marley Marl
+<br>
+I let my tape <%= @verb1 %> til my tape <%= @verb1_verb1.verb.conjugate :tense => :past, :aspect => :perfective, :person => :third %>
+<br>
+Smokin' weed and Bambu, sippin on Private <%= @verb1_noun1.capitalize %>
+
+<p class="result">
+Now I'm in the limelight cause I rhyme tight
+<br>
+Time to get <%= @verb2.verb.conjugate :tense => :past, :aspect => :perfective %>, blow up like the <%= @verb2_noun1 %>
+<br>
+Born <%= @noun2 %>, the opposite of a <%= @noun2_noun1 %>
+<br>
+Remember when I used to eat sardines for <%= @noun2_noun2 %>
+<br>
+I'm blowin up like <%= @adj_noun1 %>
+<br>
+Call the crib, same number same <%= @adj_noun2 %> 
+<br>
+It's all <%= @adj %>
+</p>
+</div>
+
+
+
+<footer>
+	<ul>
+		<li>
+			<div class="fb-share-button" data-href=<%= @sharable_link %> data-layout="button" data-mobile-iframe="true"></div>
+		</li>
+		<li> <%= link_to "Workshop this", controller: "home", action: "juicy_prep", noun1: @noun1, noun2: @noun2, verb1: @verb1, verb2: @verb2, adj: @adj, propNoun: @propNoun %>
+		</li>
+		<li>
+			<%= link_to "Next Round", root_path, method: "get" %>
+			<!-- Removing method: "get" will cause program to not reload JS on redirect -->
+		</li>
+	</ul>
+</footer>
+

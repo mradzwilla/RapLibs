@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RapLibs</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+<%= csrf_meta_tags %>
+<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+
+ <meta property="og:site_name" content="RapLibs"/>
+
+<meta property="og:title" content="RapLibs" />
+<meta property="fb:app_id" content="1717914705115747" />
+<meta property="og:image" content= <%= image_url('RapLibs.PNG')%> />
+
+</head>
+<body>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6&appId=1717914705115747";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<%= yield %>
+
+</body>
+
+ <script type='text/javascript'>
+if ($('#full_result').text()) {
+ $("meta[property='og:description']").remove();
+    $('head').append( "<meta property='og:description' content='"+ $('#full_result').text() + "'>" );
+   };
+
+</script>
+
+</html>

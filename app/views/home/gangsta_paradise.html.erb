@@ -1,0 +1,38 @@
+<div class="raplibs" id="final_position">
+	<div class="rap" id="rap_final">RAP
+		<span class="libs" id="libs_final">LIBS
+		</span>
+	</div>
+</div>
+
+<div id="full_result">
+<p class="result">
+As I walk through the valley of the shadow of <%= @noun1 %> <br>
+I take a look at my life and realize there's nothing <%= @noun1_adj1 %><br> 
+'Cause I've been <%= (@verb1.verb.conjugate :person => :first, :aspect => :progressive).gsub('am ', '').gsub('ing', "in'")  %> and <%= (@verb1_verb1.verb.conjugate :person => :first, :aspect => :progressive).gsub('am ', '').gsub('ing', "in'") %> so long that <br>
+Even my mamma thinks that my mind is gone<br>
+But I ain't never crossed a man that didn't deserve it<br>
+Me be treated like a punk, you know that's unheard of<br>
+
+You better watch how you <%= (@verb2.verb.conjugate :person => :first, :aspect => :progressive).gsub('am ', '').gsub('ing', "in'")  %>, and where you <%= (@verb2_verb1.verb.conjugate :person => :second, :aspect => :progressive).gsub('are ', '').gsub('ing', "in'") %><br>
+Or you and <%= @propNoun %> might be lined in <%= @verb2_noun1 %><br>
+
+<p class="result">
+I really hate to trip but I gotta <%= @noun2_verb1.verb.conjugate :tense => :present,:person => :first %><br>
+As they <%= @noun2_verb2.verb.conjugate :tense => :present,:person => :third, :plurality => :plural %> I see myself in the  <%= @noun2 %>, fool<br>
+I'm the kinda G that little homies want to be like<br>
+On my knees in the night, saying prayers in the <%= @adj %> light<br></p>
+</div>
+
+<footer>
+	<ul>
+		<li>
+			<div class="fb-share-button" data-href=<%= @sharable_link %> data-layout="button" data-mobile-iframe="true"></div>
+		</li>
+		<li> <%= link_to "Workshop this", controller: "home", action: "gangsta_paradise_prep", noun1: @noun1, noun2: @noun2, verb1: @verb1, verb2: @verb2, adj: @adj, propNoun: @propNoun %>
+		</li>
+		<li>
+			<%= link_to "Next Round", root_path, method: "get" %>
+		</li>
+	</ul>
+</footer>

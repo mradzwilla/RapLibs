@@ -1,0 +1,45 @@
+<div class="raplibs" id="final_position">
+	<div class="rap" id="rap_final">RAP
+		<span class="libs" id="libs_final">LIBS
+		</span>
+	</div>
+</div>
+
+<div id="full_result" class="lose_yourself_result">
+
+<p>Look. If you had one shot, or one opportunity<br> to seize everything you ever wanted in one moment <br>
+Would you <%= @verb2.verb.conjugate :person => :second %> it <br>
+Or just let it slip?</p>
+
+
+<p>Yo.<br>
+His palms are <%= @adj %>, knees weak, arms are <%= @adj_adj1 %> <br>
+There's vomit on his <%= @adj_noun1 %>, mom's <%= @adj_noun2 %>  <br>
+He's nervous, but on the surface he looks calm and <%= @adj_adj2%> <br>
+To drop bombs, but he keeps on forgettin' <br>
+What he wrote down, the whole crowd goes so loud <br>
+He opens his mouth, but the words won't come out <br>
+He's <%= (@verb1.verb.conjugate :person => :first, :aspect => :progressive).gsub('am ', '').gsub('ing', "in'")  %>, how, everybody's <%= (@verb1_verb1.verb.conjugate :person => :first, :aspect => :progressive).gsub('am ', '').gsub('ing', "in'")  %> now <br>
+The clocks run out, times up, over, blaow!</p>
+<p>Snap back to <%= @noun1 %>, oh there goes <%= @noun1_noun1 %> <br>
+Oh, there goes <%= @noun1_noun2 %>, he choked <br>
+He's so mad, but he won't give up <%= @noun1_adverb1 %>. No! <br>
+He won't have it, he knows his whole back to these <%= @noun2.pluralize %> <br>
+It don't matter, he's <%= @noun2_adj1 %>, he knows that, but he's <%= @noun2_adj2 %> <br>
+He's so stacked that he knows, when he goes back to his mobile home, that's when its <br>
+Back to the lab again yo, this whole rhapsody <br>
+Better go capture <%= @propNoun %> and hope it don't pass me</p>
+
+</div>
+
+<footer>
+	<ul>
+		<li>
+			<div class="fb-share-button" data-href=<%= @sharable_link %> data-layout="button" data-mobile-iframe="true"></div>
+		</li>
+		<li> <%= link_to "Workshop this", controller: "home", action: "lose_yourself_prep", noun1: @noun1, noun2: @noun2, verb1: @verb1, verb2: @verb2, adj: @adj, propNoun: @propNoun %>
+		</li>
+		<li>
+			<%= link_to "Next Round", root_path, method: "get" %>
+		</li>
+</footer>

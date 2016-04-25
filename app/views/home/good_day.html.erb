@@ -1,0 +1,41 @@
+<div class="raplibs" id="final_position">
+	<div class="rap" id="rap_final">RAP
+		<span class="libs" id="libs_final">LIBS
+		</span>
+	</div>
+</div>
+
+<div id="full_result">
+<p>
+Just wakin' up in the mornin' gotta thank <%= @noun1.pluralize.capitalize %><br>
+I don't know but today seems kinda <%= @noun1_adj1 %>
+<br>
+No barkin from the <%= @noun1_noun1 %>, no <%= @noun1_noun2 %><br>
+And momma cooked a breakfast with no <%= @noun1_noun3 %><br> </p>
+
+<p>I got my grub on, but didn't <%= @verb1 %> out<br>
+Finally got a call from a girl I wanna <%= @verb1_verb1.verb.conjugate :tense => :present,:person => :first %> out<br>
+Hooked it up for later as I hit the <%= @noun2 %><br>
+Thinkin' will I live, another <%= @noun2_noun1 %><br>
+I gotta go cause I got me a <%= @verb2_noun1 %><br>
+And if I hit the switch, I can make the a** <%= @verb2 %><br></p>
+
+<p>
+Had to stop at a red <%= @adj_noun1 %><br>
+Lookin in my mirror and not a jacker <%= @adj_adj1 %><br>
+And everything is <%= @adj %><br>
+I got a beep from <%= @propNoun %>, and we can **** <%= @adj_adverb1 %><br>
+</p>
+</div>
+
+<footer>
+	<ul>
+		<li>
+			<div class="fb-share-button" data-href=<%= @sharable_link %> data-layout="button" data-mobile-iframe="true"></div>
+		</li>
+		<li> <%= link_to "Workshop this", controller: "home", action: "good_day_prep", noun1: @noun1, noun2: @noun2, verb1: @verb1, verb2: @verb2, adj: @adj, propNoun: @propNoun %>
+		</li>
+		<li>
+			<%= link_to "Next Round", root_path, method: "get" %>
+		</li>
+</footer>
