@@ -69,18 +69,13 @@ $("#noun2").hide();
 $("#verb2").hide();
 $("#adj").hide();
 $("#propNoun").hide();
-// $( "#foo" ).one( "click", function() {
-//   alert( "This will be displayed only once." );
-// });
+
 
 $("#about_link").click(function(){
 
 	if ($("#about").is(':hidden')){	
 		$('#about').slideDown();
-		// $("#about_link").one("click",function(){
-		// 		$('#about').slideUp();
 
-		// })
 	} else {
 		$('#about').slideUp();
 
@@ -98,7 +93,6 @@ $("#flow").one("click", function(){
 	var currentSong = new Audio("assets/" + beat_library[Math.floor(Math.random()*(beat_library.length))] +".mp3")
 
 	currentSong.play();
-console.log(currentSong)
 })
 
 $("#flow").click(function(){
@@ -111,8 +105,6 @@ $("#flow").click(function(){
 		$("#noun1").fadeIn();
 	},2000)
 })
-
-// $("#noun1").promise().done(function(){
 
 		$("#flow").click(function(event){
 
@@ -127,10 +119,7 @@ $("#flow").click(function(){
 				
 			}
 		})
-// })
 
-
-// $("#verb1").promise().done(function(){
 		$("#flow").click(function(){
 
 			if ($('#verb1').val().length !== 0){
@@ -145,10 +134,6 @@ $("#flow").click(function(){
 
 			}
 		})
-// })
-
-
-// $("#noun2").promise().done(function(){
 
 		$("#flow").click(function(){
 			if ($('#noun2').val().length !== 0) {
@@ -164,10 +149,6 @@ $("#flow").click(function(){
 
 			}
 		})
-// })
-
-
-// $("#verb2").promise().done(function(){
 
 		$("#flow").click(function(){
 			if ($('#verb2').val().length !== 0) {
@@ -182,10 +163,6 @@ $("#flow").click(function(){
 
 			}
 		})
-// })
-
-
-// $("#adj").promise().done(function(){
 
 		$("#flow").click(function(){
 			if ($('#adj').val().length !== 0){
@@ -211,6 +188,5 @@ $("#flow").click(function(){
 				})
 			}
 		})
-// })
 
 }) //Closes .ready
