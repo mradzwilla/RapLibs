@@ -29,7 +29,7 @@ gem 'engtagger'
 gem 'nokogiri'
 gem 'ruby_rhymes'
 gem 'verbs'
-
+gem 'pg'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
