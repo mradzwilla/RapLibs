@@ -88,11 +88,11 @@ $('#about_back').click(function(){
 
 $("#flow").one("click", function(){
 
-	var beat_library = ["epic","extravagant", "feelin_it", "hippop", "Im_the_king", "mixed_emotion", "newboys","so_real","the_beginning","the_one","thee_banger","therealest"]
-
-	var currentSong = new Audio("assets/" + beat_library[Math.floor(Math.random()*(beat_library.length))] +".mp3")
-
-	currentSong.play();
+	var beat_library = ["pvhhcl2627yazg2/therealest", "8vmyvlqwz7nlt12/thee_banger","no02hwo57hy091o/the_beginning","34ec2w4i4559wf3/the_one.mp3","3pod9ri9u4c7ftz/so_real", "czmb1he4zwweqqy/newboys","e82kgemj5zbuu5e/Im_the_king","b38qdxk23t1tc8f/hippop", "zxa92zwuuvim975/feelin_it", "3grl7au2fhzzhas/extravagant", "macwzw0k1wbhevy/epic", ]
+	
+	var songPath = beat_library[Math.floor(Math.random()*(beat_library.length))]
+	console.log(songPath)
+	$('.okie').append("<audio autoplay><source src='https://www.dropbox.com/s/" + songPath + ".mp3?raw=1' type='audio/mp3'>")
 })
 
 $("#flow").click(function(){
