@@ -1,11 +1,11 @@
 @font-face {
 	font-family: "Champion Gothic Featherweight";
-	src: url(/assets/copyfonts.com_champion-htf-featherweight_1_.ttf) format("truetype");
+	src: font-url(/assets/copyfonts.com_champion-htf-featherweight_1_.ttf) format("truetype");
 }
 
 @font-face {
 	font-family: "ADLIB";
-	src: url(/assets/ADLIB.ttf) format("truetype");
+	src: font-url(/assets/ADLIB.ttf) format("truetype");
 }
 
 body {

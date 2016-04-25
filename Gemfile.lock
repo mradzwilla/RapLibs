@@ -79,6 +79,7 @@ GEM
     multi_xml (0.5.5)
     nokogiri (1.6.7.2-x86-mingw32)
       mini_portile2 (~> 2.0.0.rc2)
+    pg (0.17.1-x86-mingw32)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -166,6 +167,7 @@ DEPENDENCIES
   jquery-rails
   json
   nokogiri
+  pg
   rails (= 4.2.5.2)
   ruby_rhymes
   sass-rails (~> 5.0)
