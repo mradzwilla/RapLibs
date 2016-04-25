@@ -326,14 +326,12 @@ width: 128px;
 #rap_final {
 font-size: 60px;
 height: 127.219px;
-/*border: 1px solid red;
-*/}
+}
 
 #libs_final {
 font-size: 27px;
-margin-left: -5px;s
-/*border: 1px solid red;
-*/}
+margin-left: -5px;
+}
 
 .lose_yourself_result {
 	margin-top: -55px;
