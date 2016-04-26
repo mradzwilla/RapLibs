@@ -1,0 +1,38 @@
+<div class="raplibs" id="final_position">
+	<div class="rap" id="rap_final">RAP
+		<span class="libs" id="libs_final">LIBS
+		</span>
+	</div>
+</div>
+
+<div id="full_result"><p>I'm the king of rock, there is none <%= @verb2_adj1 %><br>
+Sucker MC's should call me <%= @verb2_noun1 %><br>
+To burn my kingdom, you must use <%= @verb2_noun2 %><br>
+I won't stop rockin' till I <%= @verb2%><br>
+Now we rock the party and we <%= @verb1_verb1 %><br>
+All cuts are on time and rhymes <%= @verb1.verb.conjugate :person => :third, :tense => :present %><br>
+Got the right to vote and will  <%= @verb1_verb2 %><br>
+And other rappers can't stand us, but give us <%= @verb1_noun1 %></p>
+
+<p>They called us <%= @adj %>, we're gettin' <%= @adj1_comparative %>, there's no one <%= @adj_adj1%><br>
+It's not Michael Jackson and this is not <%= @adj_noun1 %><br>
+I'm one def rapper, I know I can hang<br>
+I'm <%= @noun1.capitalize %> from <%= @noun1.capitalize %>-DM<%= @noun2_verb1[0].capitalize %>, like <%= @propNoun %> from <%= @propNoun %> and the Gang<br>
+<%= @noun2_noun1.capitalize %> to the rock, rock to the <%= @noun2_noun1 %><br>
+DM<%= @noun2_verb1[0].capitalize %> stands for devastating mic <%= @noun2_verb1 %><br>
+You can't touch me with a ten foot <%= @noun2_noun2 %><br>
+And I even made the devil sell me his <%= @noun2 %></p>
+
+<footer>
+	<ul>
+		<li>
+			<div class="fb-share-button" data-href=<%= @sharable_link %> data-layout="button" data-mobile-iframe="true"></div>
+		</li>
+		<li> <%= link_to "Workshop this", controller: "home", action: "king_of_rock_prep", noun1: @noun1, noun2: @noun2, verb1: @verb1, verb2: @verb2, adj: @adj, propNoun: @propNoun %>
+		</li>
+		<li>
+			<%= link_to "Next Round", root_path, method: "get" %>
+			<!-- Removing method: "get" will cause program to not reload JS on redirect -->
+		</li>
+	</ul>
+</footer>

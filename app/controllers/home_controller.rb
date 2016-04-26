@@ -145,14 +145,33 @@ def SyllableSelect(array, num)
 	return @result
 end
 
+def makeComparative(adj)
+#Convert an adj into its comparative form
+
+	if adj == "*expletive*"
+		return "*expletive*"
+	elsif adj.nil?
+		return "*expletive*"
+	elsif adj.to_phrase.syllables >= 2 && adj[-1] == "y"
+		return adj.gsub(/y$/,'ier')
+	elsif adj.to_phrase.syllables >= 2
+		return "more " + adj
+	elsif /[aeiou]/.match(adj[-2]) && /([b-df-hj-np-tvx-z])/.match(adj[-1])
+		return adj + adj[-1] + "er"
+	elsif adj[-1] == "e"
+		return adj + "r"
+	else
+		return adj +"er"
+	end
+end
+
 def index
 
 	@song_list = ["epic","extravagant", "feelin_it", "hippop", "Im_the_king", "mixed_emotion", "newboys","real_rb","so_real","the_beginning","the_one","thee_banger","therealest"]
 
 	@song_title = @song_list[RandomInteger(@song_list)]
 
-
-	@template_idx = rand(0..4)
+	@template_idx = rand(0..5)
 
 	if @template_idx == 0
 		@form_path = americkaz_most_prep_path
@@ -164,6 +183,8 @@ def index
 		@form_path = juicy_prep_path
 	elsif @template_idx == 4
 		@form_path = lose_yourself_prep_path
+	elsif @template_idx == 5
+		@form_path = king_of_rock_prep_path
 	end
 		
 end
@@ -468,5 +489,75 @@ def lose_yourself
 
 	@sharable_link = request.original_url
 
+end
+
+def king_of_rock_prep
+
+	@noun1 = params[:noun1]
+	@noun2 = params[:noun2]
+	@verb1 = params[:verb1]
+	@verb2 = params[:verb2]
+	@adj = params[:adj]
+	@propNoun = params[:propNoun]
+
+	# @noun1rhymes = getRhymes(@noun1)
+	@noun2rhymes = getRhymes(@noun2)
+	@verb1rhymes = getRhymes(@verb1)
+	@verb2rhymes = getRhymes(@verb2)
+	@adjrhymes = getRhymes(@adj)
+
+	#None needed for @noun1
+
+	@noun2_nouns = getNouns(@noun2rhymes.join(','))
+	@noun2_verbs = getVerbs(@noun2rhymes.join(','))
+	@noun2_noun1 = @noun2_nouns[RandomInteger(@noun2_nouns)]
+	@noun2_noun2 = @noun2_nouns[RandomInteger(@noun2_nouns)]
+	@noun2_verb1 = @noun2_verbs[RandomInteger(@noun2_verbs)]
+
+	@verb1_nouns = getNouns(@verb1rhymes.join(','))
+	@verb1_verbs = getVerbs(@verb1rhymes.join(','))
+	@verb1_noun1 = @verb1_nouns[RandomInteger(@verb1_nouns)]
+	@verb1_verb1 = @verb1_verbs[RandomInteger(@verb1_verbs)]
+	@verb1_verb2 = @verb1_verbs[RandomInteger(@verb1_verbs)]
+
+	@verb2_nouns = getNouns(@verb2rhymes.join(','))
+	@verb2_adjs = getAdj(@verb2rhymes.join(','))
+	@verb2_noun1 = @verb2_nouns[RandomInteger(@verb2_nouns)]
+	@verb2_noun2 = @verb2_nouns[RandomInteger(@verb2_nouns)]
+	@verb2_adj1 = @verb2_adjs[RandomInteger(@verb2_adjs)]
+
+	@adj_adjs = getAdj(@adjrhymes.join(','))
+	@adj_nouns = getNouns(@adjrhymes.join(','))
+	@adj_adj1 = @adj_adjs[RandomInteger@adj_adjs]
+	@adj_noun1 = @adj_nouns[RandomInteger(@adj_nouns)]
+
+
+	redirect_to controller: "home", action: "king_of_rock", noun1: @noun1, noun2: @noun2, verb1: @verb1, verb2: @verb2, adj: @adj, propNoun: @propNoun, noun2_noun1: @noun2_noun1, noun2_noun2: @noun2_noun2, noun2_verb1: @noun2_verb1, verb1_noun1: @verb1_noun1, verb1_verb1: @verb1_verb1, verb1_verb2: @verb1_verb2, verb2_noun1: @verb2_noun1, verb2_noun2: @verb2_noun2, verb2_adj1: @verb2_adj1, adj_adj1: @adj_adj1, adj_noun1: @adj_noun1
 	end
+
+def king_of_rock
+
+	@noun1 = params[:noun1]
+	@noun2 = params[:noun2]
+	@verb1 = params[:verb1]
+	@verb2 = params[:verb2]
+	@adj = params[:adj]
+	@propNoun = params[:propNoun]
+	@noun2_noun1 = params[:noun2_noun1]
+	@noun2_noun2 = params[:noun2_noun2]
+	@noun2_verb1 = params[:noun2_verb1]
+	@verb1_noun1 = params[:verb1_noun1]
+	@verb1_verb1 = params[:verb1_verb1]
+	@verb1_verb2 = params[:verb1_verb2]
+	@verb2_noun1 = params[:verb2_noun1]
+	@verb2_noun2 = params[:verb2_noun2]
+	@verb2_adj1 = makeComparative(params[:verb2_adj1])
+	@adj_adj1 = makeComparative(params[:adj_adj1])
+	@adj_noun1 = params[:adj_noun1]
+
+	@adj1_comparative = makeComparative(@adj)
+
+
+end
+
 end #Ends the document

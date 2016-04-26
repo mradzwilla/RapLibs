@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   get '/LoseYourself_prep' => "home#lose_yourself_prep", as: :lose_yourself_prep
   get '/LoseYourself' => "home#lose_yourself", as: :lose_yourself
 
+  get '/KingofRock_prep' => 'home#king_of_rock_prep', as: :king_of_rock_prep
+  get '/KingofRock' => 'home#king_of_rock', as: :king_of_rock
+
   root 'home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
