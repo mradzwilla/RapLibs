@@ -23,8 +23,6 @@ def getNouns(strung_array)
   	#Tests if original string or returned hash is empty
   	if @respnouns.nil?
   		return FillNil(@result)
-  	# elsif @respadj.empty?
-  	# 	return FillNil(@result)
   	else
   		@respnouns.each_key do |key|
   		@result.push(key)
@@ -96,7 +94,7 @@ def getVerbs(strung_array)
 	@result.push(@parsedstr.search("//vbp").to_s.gsub('<vbp>', '' ).split('</vbp>')) if @parsedstr.search("//vbp").to_s.gsub('<vbp>', '' ).split('</vbp>').any?
 
 	# @result.push(@parsedstr.search("//vbd").to_s.gsub('<vbd>', '' ).split('</vbd>')) if @parsedstr.search("//vbd").to_s.gsub('<vbd>', '' ).split('</vbd>').any?
-	# Disabled because of conflicts with conjugation gem
+	# Disabled temporarily because of conflicts with conjugation gem
 
 	@result.push(@parsedstr.search("//vbg").to_s.gsub('<vbg>', '' ).split('</vbg>')) if @parsedstr.search("//vbg").to_s.gsub('<vbg>', '' ).split('</vbg>').any?
 
@@ -126,16 +124,6 @@ def RandomInteger(array)
 
 end
 
-# def GetSyllables(hash, num)
-# 	#Will typically take @response as argument
-# 	@result =[]
-# 	hash.each do |x|
-# 		if (x["syllables"] == num.to_s)
-# 			@result.push(x["word"])
-# 		end
-# 	end
-# 	return @result
-# end
 
 def SyllableSelect(array, num)
 	@result =[]
@@ -205,8 +193,8 @@ def good_day_prep
 	@adjrhymes = getRhymes(@adj)
 
 	#About naming convention:
-	#First element of instance name relates to param
-	#Second relates to instances needed for template
+	#First element of name relates to param with which it rhymes
+	#Second relates to speech part and number needed for template
 	#noun1_noun2 is the second noun on a page that rhymes with the first parameter of noun1
 	#adj_verb2 would be the second instance of a verb that rhymes with the adjective input	
 
@@ -401,7 +389,6 @@ def juicy_prep
 
 	redirect_to controller: 'home', action: 'juicy', noun1: @noun1, noun2: @noun2, verb1: @verb1, verb2: @verb2, adj: @adj, propNoun: @propNoun, noun1_noun1: @noun1_noun1, noun1_noun2: @noun1_noun2, noun2_noun1: @noun2_noun1, noun2_noun2: @noun2_noun2, verb1_verb1: @verb1_verb1, verb1_noun1: @verb1_noun1, verb2_noun1: @verb2_noun1, adj_noun1: @adj_noun1, adj_noun2: @adj_noun2
 
-
 end
 
 def juicy
@@ -500,7 +487,6 @@ def king_of_rock_prep
 	@adj = params[:adj]
 	@propNoun = params[:propNoun]
 
-	# @noun1rhymes = getRhymes(@noun1)
 	@noun2rhymes = getRhymes(@noun2)
 	@verb1rhymes = getRhymes(@verb1)
 	@verb2rhymes = getRhymes(@verb2)
@@ -557,7 +543,6 @@ def king_of_rock
 
 	@adj1_comparative = makeComparative(@adj)
 
-
 end
 
-end #Ends the document
+end #Mic Drop

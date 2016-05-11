@@ -23,32 +23,31 @@ $('#rap_animate').css({
 		'animation': 'textgrow 1s infinite'
 	})
 
-	$("#flow").click(function(){
+$("#flow").click(function(){
 		
-		$(".raplibs").animate({
-			'margin-top' : '20px',
-			'padding-right':'0px'
-		})
+	$(".raplibs").animate({
+		'margin-top' : '20px',
+		'padding-right':'0px'
+	})
 
-		$('.libs').css({
-			'animation':'none'
-		}).animate({
-			"font-size": "27px",
-			"margin-left": "-5px"
-		})
+	$('.libs').css({
+		'animation':'none'
+	}).animate({
+		"font-size": "27px",
+		"margin-left": "-5px"
+	})
 
-		$('.rap').css({
-			'animation':'none'
-		}).animate({
-			"font-size": "60px",
-			"height": "127.219px",
-			"width": "128px",
+	$('.rap').css({
+		'animation':'none'
+	}).animate({
+		"font-size": "60px",
+		"height": "127.219px",
+		"width": "128px",
+	});
 
-		});
-
-		$('.flowButton').animate({
-			'margin-top': '80px'
-		})
+	$('.flowButton').animate({
+		'margin-top': '80px'
+	})
 })
 
 $('#flow').fadeIn()
@@ -75,10 +74,8 @@ $("#about_link").click(function(){
 
 	if ($("#about").is(':hidden')){	
 		$('#about').slideDown();
-
 	} else {
 		$('#about').slideUp();
-
 	}
 })
 
@@ -91,8 +88,7 @@ $("#flow").one("click", function(){
 	var beat_library = ["pvhhcl2627yazg2/therealest", "8vmyvlqwz7nlt12/thee_banger","no02hwo57hy091o/the_beginning","34ec2w4i4559wf3/the_one.mp3","3pod9ri9u4c7ftz/so_real", "czmb1he4zwweqqy/newboys","e82kgemj5zbuu5e/Im_the_king","b38qdxk23t1tc8f/hippop", "zxa92zwuuvim975/feelin_it", "3grl7au2fhzzhas/extravagant", "macwzw0k1wbhevy/epic", ]
 	
 	var songPath = beat_library[Math.floor(Math.random()*(beat_library.length))]
-	console.log(songPath)
-	$('.okie').append("<audio autoplay><source src='https://www.dropbox.com/s/" + songPath + ".mp3?raw=1' type='audio/mp3'>")
+	$('.audio_player').append("<audio autoplay><source src='https://www.dropbox.com/s/" + songPath + ".mp3?raw=1' type='audio/mp3'>")
 })
 
 $("#flow").click(function(){
@@ -106,87 +102,85 @@ $("#flow").click(function(){
 	},2500)
 })
 
-		$("#flow").click(function(event){
+$("#flow").click(function(event){
 
-			if ($('#noun1').val().length !== 0){
+	if ($('#noun1').val().length !== 0){
 
-				$("#noun1").hide();
-				$('.fill_text').html(phrases[randIdx()]).fadeIn();
-				setTimeout(function(){
-				$('.fill_text').hide();
-				$("#verb1").fadeIn();
-				},2000)
-				
+		$("#noun1").hide();
+		$('.fill_text').html(phrases[randIdx()]).fadeIn();
+		setTimeout(function(){
+			$('.fill_text').hide();
+			$("#verb1").fadeIn();
+			},2000)	
 			}
-		})
+	})
 
-		$("#flow").click(function(){
+$("#flow").click(function(){
 
-			if ($('#verb1').val().length !== 0){
+	if ($('#verb1').val().length !== 0){
 
-				$("#verb1").hide();
-				$('.fill_text').html(phrases[randIdx()]).fadeIn()
+		$("#verb1").hide();
+		$('.fill_text').html(phrases[randIdx()]).fadeIn()
 
-				setTimeout(function(){
-				$('.fill_text').hide();
-				$("#noun2").fadeIn();
-				},2000)
+		setTimeout(function(){
+			$('.fill_text').hide();
+			$("#noun2").fadeIn();
+			},2000)
+		}
+	})
 
+$("#flow").click(function(){
+
+	if ($('#noun2').val().length !== 0) {
+
+		$("#noun2").hide();
+		$('.fill_text').html(phrases[randIdx()]).fadeIn();
+
+		setTimeout(function(){
+			$('.fill_text').hide();
+			$("#verb2").fadeIn();
+			},2000)
+		}
+	})
+
+$("#flow").click(function(){
+
+	if ($('#verb2').val().length !== 0) {
+
+		$("#verb2").hide();
+		$('.fill_text').html(phrases[randIdx()]).fadeIn();
+
+		setTimeout(function(){
+			$('.fill_text').hide();
+			$("#adj").fadeIn();
+			},2000)
 			}
-		})
+	})
 
-		$("#flow").click(function(){
-			if ($('#noun2').val().length !== 0) {
+$("#flow").click(function(){
 
-				$("#noun2").hide();
-				$('.fill_text').html(phrases[randIdx()]).fadeIn();
+	if ($('#adj').val().length !== 0){
 
-				setTimeout(function(){
-				$('.fill_text').hide();
-				$("#verb2").fadeIn();
-				},2000)
+		$("#adj").hide();
+		$('.fill_text').html(phrases[randIdx()]).fadeIn();
 
-
-			}
-		})
-
-		$("#flow").click(function(){
-			if ($('#verb2').val().length !== 0) {
-
-				$("#verb2").hide();
-				$('.fill_text').html(phrases[randIdx()]).fadeIn();
-
-				setTimeout(function(){
-				$('.fill_text').hide();
-				$("#adj").fadeIn();
-				},2000)
-
-			}
-		})
-
-		$("#flow").click(function(){
-			if ($('#adj').val().length !== 0){
-
-				$("#adj").hide();
-				$('.fill_text').html(phrases[randIdx()]).fadeIn();
-
-				setTimeout(function(){
-				$('.fill_text').fadeOut();
-				$("#propNoun").fadeIn();
-				},2000)
+		setTimeout(function(){
+			$('.fill_text').fadeOut();
+			$("#propNoun").fadeIn();
+		},2000)
 
 				$("#flow").click(function(){
 
 					if ($('#propNoun').val().length !== 0) {
-					$('#propNoun').hide();
-					$('form').hide();
+						$('#propNoun').hide();
+						$('form').hide();
 
-					setInterval(function(){
-					$('.fill_text').html(phrases[randIdx()]).fadeIn()
-					},2000)
-					}
+						setInterval(function(){
+							$('.fill_text').html(phrases[randIdx()]).fadeIn()
+							},2000)
+						}
 				})
-			}
-		})
+	}
+})
 
 }) //Closes .ready
