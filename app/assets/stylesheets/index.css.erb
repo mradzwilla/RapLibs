@@ -159,8 +159,7 @@ footer{
 	text-shadow: none;
 	text-shadow: 2px 2px 2px red;
 	margin-left: -12px;
-/*	animation: textgrow 1s infinite;
-*/
+
 }
 
 .raplibs {
@@ -170,8 +169,7 @@ footer{
 	margin-right: auto;
 	width: 128px;
 	margin-top: 200px;
-/*	border: 1px solid green;
-*/	padding-right: 102px;
+	padding-right: 102px;
 }
 
 .raplibs:hover{
@@ -179,21 +177,23 @@ footer{
 }
 .input_section input[type=text] {
 	background-color: black;
-	border: white solid .5px;
+	border: white solid 1px;
+	border-top: hidden;
+	border-left: hidden;
+	border-right: hidden;
 	color: white;
 	text-align: center;
-/*	right: 0;
-	left: 0;
-	margin-left: auto;
-	margin-right: auto;*/
 	position: absolute;
 	width:200px;
 }
 
+input:focus {
+	outline: none;
+}
+
 .input_section input {
 	top: 0;
-/*	bottom: 0;
-*/
+
 	position: absolute;
 	font-family: 'Champion Gothic Featherweight';
 	font-size: 28px;
@@ -217,27 +217,22 @@ footer{
 	color: white;
 	left: 0;
 	right: 0;
-/*	box-shadow: 0px 1px 1px 0 white;
-*/	outline: none;
+outline: none;
 
 }
 
 #flow:hover{
 	color:red;
 	background-color: white;
-/*	box-shadow: 0px 1px 1px 0 red;
-*/
+
 }
 .input_container {
 	text-align: center;
 	margin-top: 40px;
-/*		border: 1px solid red;
-*/
-	/*margin-left: 30px;*/
+
 }
 .input_section {
-/*	border: 1px solid blue;
-*/	position: absolute;
+	position: absolute;
 	width: 400px;
 	height: 50px;
 	left: 0;
@@ -250,8 +245,7 @@ body {
 	color: white;
 }
 .text_line {
-/*	position: absolute;
-*/	width: 600px;
+	width: 600px;
 	margin-right: auto;
 	margin-left: auto;
 	text-decoration: none;
@@ -260,13 +254,11 @@ body {
 	font-family: 'Champion Gothic Featherweight';
 	font-size: 28px;
 	text-align: center;
-/*	border: 1px solid green;
-*/}
+}
 
 .fill_text {
 	font-family: 'Champion Gothic Featherweight';
-/*	border: 1px solid green;
-*/	font-size: 40px;
+	font-size: 40px;
 	text-align: center;
 	width: 600px;
 	display: inline-block;
@@ -282,35 +274,34 @@ body {
 	width: 150px;
 	margin-left: auto;
 	margin-right: auto;
-/*	border: solid white 1px;
-*/	margin-top: 0px;
+	margin-top: 0px;
 	z-index: -1
 }
 
 ::-webkit-input-placeholder {
    color: red;
    font-family: 'Champion Gothic Featherweight';
-   font-size: 28px;
+   font-size: 24px;
 }
 
 :-moz-placeholder { /* Firefox 18- */
    color: red;
    font-family: 'Champion Gothic Featherweight';
-   font-size: 28px;
+   font-size: 24px;
 
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
    color: red; 
    font-family: 'Champion Gothic Featherweight';
-    font-size: 28px;
+    font-size: 24px;
 
 }
 
 :-ms-input-placeholder {  
    color: red; 
    font-family: 'Champion Gothic Featherweight';
-   font-size: 28px;
+   font-size: 24px;
 
 }
 

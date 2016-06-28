@@ -40,7 +40,8 @@ def getRhymes(word)
    		"Accept" => "application/json"}
 
   	@rhymes.body.each do |x|
-  		@result.push(x["word"]) if x["score"] >= 240
+  		@result.push(x["word"]) if (x["score"] >= 240 && x['freq'] >= 20)
+
   	end
 
   	return @result
