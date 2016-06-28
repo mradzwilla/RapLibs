@@ -1,28 +1,9 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to RapLibs! This app is a hybrid between MadLibs and your own personalized rap song.
 
-Things you may want to cover:
+The user input is queried through the RhymeBrain API (http://rhymebrain.com/en). The resulting rhyming words are then sorted by parts of speech and entered into various templates.
 
-* Ruby version
+Give it a try at djraplibs.com!
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Feel free to reach out with any suggestions or if you experienced a problem.
